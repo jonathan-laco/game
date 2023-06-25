@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pedra-Papel-Tesoura</title>
+  <link rel="stylesheet" type="text/css" href="index.css">
+  <meta charset="utf-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>    
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital@1&display=swap" rel="stylesheet">
+</head>
+<body>
+  <h1>Pedra-Papel-Tesoura</h1>
+  <!--Aqui fica o score-->
+  <div id="scoreboard">
+    <p id="player-score">Jogador: 0</p>
+    <p id="computer-score">Computador: 0</p>
+  </div>
+  <!--final score-->
+
+  <div id="game">
+    <p>Escolha sua jogada:</p>
+    <button class="choice" onclick="play(1)"><img width="50" height="50" src="https://img.icons8.com/ios/50/scissors.png" alt="scissors"/><p>Tesoura</p></button>
+    <button class="choice" onclick="play(2)"><img width="60" height="50" src="https://img.icons8.com/dotty/60/paper.png" alt="paper"/><p>papel</p></button>
+    <button class="choice" onclick="play(3)"><img width="60" height="50" src="https://img.icons8.com/carbon-copy/100/rock--v2.png" alt="rock--v2"/><p>Pedra</p></button>
+  </div>
+  <div id="result"></div>
+  <button id="restart-btn" onclick="restartGame()">Reiniciar Partida</button>
+
+  <script src="index.js"></script>
+  <script>alert("Bem-vindo(a) ao nosso jogo de Pedra-Papel-Tesoura! O objetivo é vencer o seu adversário, que no caso é o computador, em uma competição de melhor de 3. Isso significa que o jogo só será concluído quando você ou o computador ganharem 3 partidas.")</script>
+</body>
+</html>
