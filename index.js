@@ -1,3 +1,12 @@
+/*
+ Desenvolvido por Jonathan Laco
+ GitHub: https://github.com/jonathan-laco
+
+ Este código foi projetado para ser usado em conjunto com os arquivos index.html e index.css,
+ a fim de proporcionar uma experiência completa e aprimorada.
+
+ Início do código principal...
+*/
 let playerScore = 0;
 let computerScore = 0;
 let round = 1;
@@ -35,7 +44,7 @@ function play(playerChoice) {
   document.getElementById("computer-score").textContent = "Computador: " + computerScore;
 
   const resultElement = document.getElementById("result");
-  resultElement.textContent = "Rodada " + round + ": " + result + " " + computerResponse;
+  resultElement.innerHTML = "Rodada " + round + ": " + result + "<br>" + computerResponse;
   resultElement.style.fontFamily = "Crimson Text";
 
   round++;
@@ -91,3 +100,6 @@ function restartGame() {
 window.onload = function () {
   document.getElementById("restart-btn").disabled = true;
 };
+
+//alert explicando o jogo, toda vez que a pagina for recarregada
+alert("Bem-vindo(a) ao nosso jogo de Pedra-Papel-Tesoura! O objetivo é vencer o seu adversário, que no caso é o computador, em uma competição de melhor de 3. Isso significa que o jogo só será concluído quando você ou o computador ganharem 3 partidas.")
