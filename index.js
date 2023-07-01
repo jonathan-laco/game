@@ -40,8 +40,10 @@ function play(playerChoice) {
     computerResponse = "O computador escolheu Tesoura!";
   }
 
-  document.getElementById("player-score").textContent = "Jogador: " + playerScore;
-  document.getElementById("computer-score").textContent = "Computador: " + computerScore;
+  const playerScoreElement = document.getElementById("player-score");
+  const computerScoreElement = document.getElementById("computer-score");
+  playerScoreElement.textContent = "Jogador: " + playerScore;
+  computerScoreElement.textContent = "Computador: " + computerScore;
 
   const resultElement = document.getElementById("result");
   resultElement.innerHTML = "Rodada " + round + ": " + result + "<br>" + computerResponse;
@@ -67,14 +69,14 @@ function endGame() {
   resultElement.textContent = finalResult;
   resultElement.style.fontFamily = "Crimson Text";
 
-  // Desabilitar os botões de escolha
   const choices = document.getElementsByClassName("choice");
   for (let i = 0; i < choices.length; i++) {
     choices[i].disabled = true;
   }
 
-  // Desabilitar o botão de reiniciar partida
-  document.getElementById("restart-btn").disabled = false;
+  const restartBtn = document.getElementById("restart-btn");
+  restartBtn.disabled = false;
+  restartBtn.style.backgroundColor = "#4caf50";
 }
 
 function restartGame() {
@@ -82,8 +84,10 @@ function restartGame() {
   computerScore = 0;
   round = 1;
 
-  document.getElementById("player-score").textContent = "Jogador: 0";
-  document.getElementById("computer-score").textContent = "Computador: 0";
+  const playerScoreElement = document.getElementById("player-score");
+  const computerScoreElement = document.getElementById("computer-score");
+  playerScoreElement.textContent = "Jogador: 0";
+  computerScoreElement.textContent = "Computador: 0";
 
   const resultElement = document.getElementById("result");
   resultElement.textContent = "";
@@ -94,12 +98,18 @@ function restartGame() {
     choices[i].disabled = false;
   }
 
-  document.getElementById("restart-btn").disabled = true;
+  const restartBtn = document.getElementById("restart-btn");
+  restartBtn.disabled = true;
+  restartBtn.style.backgroundColor = "#ff0000";
 }
 
 window.onload = function () {
-  document.getElementById("restart-btn").disabled = true;
+  const restartBtn
+
+ = document.getElementById("restart-btn");
+  restartBtn.disabled = true;
+  restartBtn.style.backgroundColor = "#ff0000";
 };
 
-//alert explicando o jogo, toda vez que a pagina for recarregada
-alert("Bem-vindo(a) ao nosso jogo de Pedra-Papel-Tesoura! O objetivo é vencer o seu adversário, que no caso é o computador, em uma competição de melhor de 3. Isso significa que o jogo só será concluído quando você ou o computador ganharem 3 partidas.")
+// Alerta explicando o jogo, toda vez que a página for recarregada
+alert("Bem-vindo(a) ao nosso jogo de Pedra-Papel-Tesoura! O objetivo é vencer o seu adversário, que no caso é o computador, em uma competição de melhor de 3. Isso significa que o jogo só será concluído quando você ou o computador ganharem 3 partidas.");
