@@ -53,3 +53,25 @@ body {
     font-family: 'Crimson Text', serif;
     color: #ffffff;
   }
+
+  .choice.game-over{
+    background-color: #ff0000;
+  }
+
+  .choice,
+#restart-btn {
+  /* ... */
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.choice:hover,
+#restart-btn:hover {
+  background-color: #45a049;
+  transform: scale(1.05);
+}
+
+.choice:active,
+#restart-btn:active {
+  background-color: #3e8e41;
+  transform: scale(0.95);
+}

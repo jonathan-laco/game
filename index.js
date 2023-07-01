@@ -1,12 +1,3 @@
-/*
- Desenvolvido por Jonathan Laco
- GitHub: https://github.com/jonathan-laco
-
- Este código foi projetado para ser usado em conjunto com os arquivos index.html e index.css,
- a fim de proporcionar uma experiência completa e aprimorada.
-
- Início do código principal...
-*/
 let playerScore = 0;
 let computerScore = 0;
 let round = 1;
@@ -17,28 +8,33 @@ function play(playerChoice) {
   let result;
   let computerResponse;
 
-  if (playerChoice === computerChoice) {
-    result = "Empate!";
-  } else if (
+  if (
+    (playerChoice === 3 && computerChoice === 1) ||
     (playerChoice === 1 && computerChoice === 2) ||
-    (playerChoice === 2 && computerChoice === 3) ||
-    (playerChoice === 3 && computerChoice === 1)
+    (playerChoice === 2 && computerChoice === 3)
   ) {
     playerScore++;
     result = "Você venceu esta rodada!";
-  } else {
+  } else if (
+    (playerChoice === 1 && computerChoice === 3) ||
+    (playerChoice === 2 && computerChoice === 1) ||
+    (playerChoice === 3 && computerChoice === 2)
+  ) {
     computerScore++;
     result = "O computador venceu esta rodada!";
+  } else {
+    result = "Empate!";
   }
 
   // Obter resposta da escolha do computador
-  if (computerChoice === 1) {
-    computerResponse = "O computador escolheu Pedra!";
-  } else if (computerChoice === 2) {
-    computerResponse = "O computador escolheu Papel!";
-  } else {
-    computerResponse = "O computador escolheu Tesoura!";
-  }
+
+if (computerChoice === 1) {
+  computerResponse = "O computador escolheu Tesoura!";
+} else if (computerChoice === 2) {
+  computerResponse = "O computador escolheu Papel!";
+} else {
+  computerResponse = "O computador escolheu Pedra!";
+}
 
   const playerScoreElement = document.getElementById("player-score");
   const computerScoreElement = document.getElementById("computer-score");
@@ -86,8 +82,8 @@ function restartGame() {
 
   const playerScoreElement = document.getElementById("player-score");
   const computerScoreElement = document.getElementById("computer-score");
-  playerScoreElement.textContent = "Jogador: 0";
-  computerScoreElement.textContent = "Computador: 0";
+  playerScoreElement.textContent = "Jogador: " + playerScore;
+  computerScoreElement.textContent = "Computador: " + computerScore;
 
   const resultElement = document.getElementById("result");
   resultElement.textContent = "";
@@ -102,14 +98,3 @@ function restartGame() {
   restartBtn.disabled = true;
   restartBtn.style.backgroundColor = "#ff0000";
 }
-
-window.onload = function () {
-  const restartBtn
-
- = document.getElementById("restart-btn");
-  restartBtn.disabled = true;
-  restartBtn.style.backgroundColor = "#ff0000";
-};
-
-// Alerta explicando o jogo, toda vez que a página for recarregada
-alert("Bem-vindo(a) ao nosso jogo de Pedra-Papel-Tesoura! O objetivo é vencer o seu adversário, que no caso é o computador, em uma competição de melhor de 3. Isso significa que o jogo só será concluído quando você ou o computador ganharem 3 partidas.");

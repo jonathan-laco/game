@@ -10,13 +10,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital@1&display=swap" rel="stylesheet">
 </head>
 <body>
+ 
   <h1>Pedra-Papel-Tesoura</h1>
-  <!--Aqui fica o score-->
+  
+  <!-- Scoreboard -->
   <div id="scoreboard">
     <p id="player-score">Jogador: 0</p>
     <p id="computer-score">Computador: 0</p>
   </div>
-  <!--final score-->
+  <!-- Fim do placar -->
 
   <div id="game">
     <p>Escolha sua jogada:</p>
@@ -24,10 +26,12 @@
     <button class="choice" onclick="play(2)"><img width="60" height="50" src="https://img.icons8.com/dotty/60/paper.png" alt="paper"/><p>Papel</p></button>
     <button class="choice" onclick="play(3)"><img width="60" height="50" src="https://img.icons8.com/carbon-copy/100/rock--v2.png" alt="rock--v2"/><p>Pedra</p></button>
   </div>
+  
   <div id="result"></div>
-  <button id="restart-btn" onclick="restartGame()">Reiniciar Partida</button>
+  
+  <button id="restart-btn" onclick="restartGame()" disabled>Reiniciar Partida</button>
 
   <script src="index.js"></script>
-<!--Use o botão reinicir partida, para que evite chamar o alert em toda rodada-->
+  <!-- Use o botão "Reiniciar Partida" para evitar chamar o alert em cada rodada -->
 </body>
 </html>
