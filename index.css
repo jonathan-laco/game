@@ -16,12 +16,20 @@ body {
   }
   
   #scoreboard {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
     margin-top: 20px;
   }
   
-  #game {
-    margin-top: 40px;
+  #game-result {
+    font-weight: bold;
+    font-family: 'Crimson Text', serif;
+    color: #ffffff;
+    margin-left: 20px;
+    margin-right: 20px;
   }
+  
   
   .choice,
   #restart-btn {
@@ -45,7 +53,17 @@ body {
   #restart-btn:active {
     background-color: #3e8e41;
   }
+
+  .choice:disabled,
+  #restart-btn:disabled {
+    cursor: not-allowed;
+  }
   
+  #restart-btn {
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    cursor: not-allowed;
+  }  
+
   
   #result {
     margin-top: 20px;
@@ -60,18 +78,23 @@ body {
 
   .choice,
 #restart-btn {
-  /* ... */
+
   transition: background-color 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+
 }
+
 
 .choice:hover,
 #restart-btn:hover {
-  background-color: #45a049;
   transform: scale(1.05);
 }
 
 .choice:active,
 #restart-btn:active {
-  background-color: #3e8e41;
   transform: scale(0.95);
+}
+
+.game-over{
+  background-color: #ff0000;
 }

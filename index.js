@@ -1,3 +1,17 @@
+/*
+Autor: Jonathan Laco
+GitHub: https://github.com/jonathan-laco
+
+Este é um jogo simples de Pedra-Papel-Tesoura feito como parte de um projeto para aula da faculdade.
+
+Para uma melhor experiência, certifique-se de executar o arquivo index.js em conjunto com index.css e index.html.
+
+Caso não consiga vincular os arquivos corretamente, você também pode acessar o jogo através do link:
+https://jonathanlaco.me/game
+
+Divirta-se jogando!
+*/
+
 let playerScore = 0;
 let computerScore = 0;
 let round = 1;
@@ -25,16 +39,14 @@ function play(playerChoice) {
   } else {
     result = "Empate!";
   }
-
-  // Obter resposta da escolha do computador
-
-if (computerChoice === 1) {
-  computerResponse = "O computador escolheu Tesoura!";
-} else if (computerChoice === 2) {
-  computerResponse = "O computador escolheu Papel!";
-} else {
-  computerResponse = "O computador escolheu Pedra!";
-}
+  
+  if (computerChoice === 1) {
+    computerResponse = "O computador escolheu Tesoura!";
+  } else if (computerChoice === 2) {
+    computerResponse = "O computador escolheu Papel!";
+  } else {
+    computerResponse = "O computador escolheu Pedra!";
+  }
 
   const playerScoreElement = document.getElementById("player-score");
   const computerScoreElement = document.getElementById("computer-score");
@@ -73,13 +85,17 @@ function endGame() {
   const restartBtn = document.getElementById("restart-btn");
   restartBtn.disabled = false;
   restartBtn.style.backgroundColor = "#4caf50";
+
+  const choiceButtons = document.querySelectorAll(".choice");
+  choiceButtons.forEach((button) => {
+    button.classList.add("game-over");
+  });
 }
 
 function restartGame() {
   playerScore = 0;
   computerScore = 0;
   round = 1;
-
   const playerScoreElement = document.getElementById("player-score");
   const computerScoreElement = document.getElementById("computer-score");
   playerScoreElement.textContent = "Jogador: " + playerScore;
@@ -92,9 +108,18 @@ function restartGame() {
   const choices = document.getElementsByClassName("choice");
   for (let i = 0; i < choices.length; i++) {
     choices[i].disabled = false;
+    choices[i].classList.remove("game-over");
   }
 
   const restartBtn = document.getElementById("restart-btn");
   restartBtn.disabled = true;
   restartBtn.style.backgroundColor = "#ff0000";
 }
+
+window.onload = function() {
+  const restartBtn = document.getElementById("restart-btn");
+  restartBtn.disabled = true;
+  restartBtn.style.backgroundColor = "#ff0000";
+  restartBtn.classList.add("game-over");
+};
+//
