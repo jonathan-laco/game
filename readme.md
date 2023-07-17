@@ -20,9 +20,9 @@ Este é um projeto desenvolvido para uma aula da faculdade, que consiste em um s
 - CSS 3 
 - JavaScript
 
-## Responsividade para Dispositivos Móveis
+## Animações
 
-Em breve, será adicionada a responsividade para dispositivos móveis, para que o jogo possa ser jogado em smartphones e tablets com facilidade.
+Em breve, será adicionada animações durante a partida, para que a experiência seja aprimorada 
 
 ## Licença
 
